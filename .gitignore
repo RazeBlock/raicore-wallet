@@ -1,0 +1,6 @@
+.vscode
+bower_components
+bin
+obj
+lib
+*.user

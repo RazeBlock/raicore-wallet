@@ -1,0 +1,12 @@
+﻿#Logo {
+	vertical-align: middle;
+}
+
+body {
+	-webkit-app-region: drag;
+	-webkit-user-select: none;
+}
+
+body.rb-container-dark {
+	overflow-y: auto;
+}
