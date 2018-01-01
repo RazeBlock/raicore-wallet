@@ -1,22 +1,56 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>raicore wallet</title>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/rb-gridfree.js"></script>
-    <script src="~/js/rb-tabs.js"></script>
-    <script src="~/js/rb-modals.js"></script>
-    <link href="~/lib/normalize-css/normalize.css" rel="stylesheet"/>
-    <link href="~/css/rb-core.css" rel="stylesheet"/>
-    <link href="~/css/rb-gridfree.css" rel="stylesheet"/>
-    <link href="~/css/rb-tabs.css" rel="stylesheet"/>
-    <link href="~/css/rb-modals.css" rel="stylesheet"/>
-    <link href="~/css/site.css" rel="stylesheet"/>
+	<meta charset="UTF-8">
+	<title>raicore wallet</title>
+
+	@*
+		Handle undefined jQuery/$ as described here
+		https://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined
+		
+		See https://github.com/electron/electron/issues/254
+	*@
+	<script type="text/javascript">
+		if (typeof module === 'object') {
+			window.module = module;
+			module = undefined;
+		}
+	</script>
+
+	<environment include="Development">
+		<script src="~/js/jquery.min.js"></script>
+		<script src="~/js/rb-gridfree.js"></script>
+		<script src="~/js/rb-modals.js"></script>
+		<script src="~/js/rb-tabs.js"></script>
+	</environment>
+	<environment exclude="Development">
+		<script src="~/js/site.min.js"></script>
+	</environment>
+
+	<script type="text/javascript">
+		if (window.module) {
+			module = window.module;
+		}
+	</script>
+
+	<environment include="Development">
+		<link href="~/css/normalize.min.css" rel="stylesheet" />
+		<link href="~/css/rb-core.css" rel="stylesheet" />
+		<link href="~/css/rb-gridfree.css" rel="stylesheet" />
+		<link href="~/css/rb-modals.css" rel="stylesheet" />
+		<link href="~/css/rb-tabs.css" rel="stylesheet" />
+		<link href="~/css/site.css" rel="stylesheet" />
+	</environment>
+	<environment exclude="Development">
+		<link href="~/css/site.min.css" rel="stylesheet" />
+	</environment>
+
 </head>
 <body class="rb-container-dark">
 <h1>
-    <img id="Logo" src="images/raicore.png" width="32" height="32" alt="raicore logo"/>raicore wallet
+	<img id="Logo" src="images/raicore.png" width="32" height="32" alt="raicore logo"/>raicore wallet
 </h1>
 @RenderBody()
 </body>

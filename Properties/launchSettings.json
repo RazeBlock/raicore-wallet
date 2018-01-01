@@ -1,24 +1,17 @@
 {
-	"iisSettings": {
-		"windowsAuthentication": false,
-		"anonymousAuthentication": true,
-		"iisExpress": {
-			"applicationUrl": "http://localhost:49942/",
-			"sslPort": 0
-		}
-	},
 	"profiles": {
+		"raicore-wallet": {
+			"commandName": "Project",
+			"launchBrowser": true,
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			},
+			"applicationUrl": "http://localhost:7263/"
+		},
 		"Electron.NET App": {
 			"commandName": "Executable",
 			"executablePath": "C:\\Program Files\\dotnet\\dotnet.exe",
 			"commandLineArgs": "electronize start"
-		},
-		"IIS Express": {
-			"commandName": "IISExpress",
-			"launchBrowser": true,
-			"environmentVariables": {
-				"ASPNETCORE_ENVIRONMENT": "Development"
-			}
 		}
 	}
 }

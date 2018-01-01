@@ -1,0 +1,27 @@
+[
+	{
+		"outputFileName": "wwwroot/css/site.min.css",
+		"inputFiles": [
+			"node_modules/normalize-css/normalize.css",
+			"wwwroot/css/rb-core.css",
+			"wwwroot/css/rb-gridfree.css",
+			"wwwroot/css/rb-modals.css",
+			"wwwroot/css/rb-tabs.css",
+			"wwwroot/css/site.css"
+		]
+	},
+	{
+		"outputFileName": "wwwroot/js/site.min.js",
+		"inputFiles": [
+			"node_modules/jquery/dist/jquery.min.js",
+			"wwwroot/js/rb-gridfree.js",
+			"wwwroot/js/rb-modals.js",
+			"wwwroot/js/rb-tabs.js"
+		],
+		"minify": {
+			"enabled": true,
+			"renameLocals": true
+		},
+		"sourceMap": false
+	}
+]

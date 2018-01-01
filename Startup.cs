@@ -25,15 +25,27 @@
 
 		private static async void BootstrapElectron() {
 			var options = new BrowserWindowOptions {
-				AutoHideMenuBar = true,
-				Frame = false,
 				WebPreferences = new WebPreferences {
 					WebSecurity = true
-				}
+				},
+
+				// Visual Changes
+				Frame = false,
+				BackgroundColor = "#444",
+				Show = false,
+				Center = true
 			};
 
 			BrowserWindow window = await Electron.WindowManager.CreateWindowAsync(options);
+
 			window.SetTitle("raicore wallet");
+			window.OnReadyToShow += delegate {
+				window.Show();
+
+#if DEBUG
+				window.WebContents.OpenDevTools();
+#endif
+			};
 		}
 	}
 }

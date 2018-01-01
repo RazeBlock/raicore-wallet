@@ -1,6 +1,9 @@
 .vscode
-bower_components
+node_modules
 bin
 obj
 lib
 *.user
+
+wwwroot/css/site.min.css
+wwwroot/js/site.min.js
